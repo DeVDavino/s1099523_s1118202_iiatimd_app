@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">IATIIMD_Eindoplevering</string>
     <string name="button">Button</string>
+    <string name="title_activity_navigation">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_add">Idee Toevoegen</string>
+    <string name="title_profile">Profiel</string>
 </resources>

@@ -24,12 +24,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openIdee() {
-        Log.d("tag_1", "openIdee: ");
         Bundle bundleIdee = new Bundle();
-        Intent intent = new Intent(this, IdeeActivity.class);
-        Log.d("tag_2", "openIdee: ");
+        Intent intent = new Intent(this, NavigationActivity.class);
         intent.putExtras(bundleIdee);
         startActivity(intent);
-        Log.d("tag_3", "openIdee: ");
     }
 }

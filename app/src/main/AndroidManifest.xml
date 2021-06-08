@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IATIIMD_Eindoplevering">
-        <activity android:name=".MainActivity"> <!--Dit bestand is de pagina die als eerst wordt ingeladen-->
+        <activity
+            android:name=".NavigationActivity"
+            android:label="@string/title_activity_navigation" />
+        <activity android:name=".MainActivity"> <!-- Dit bestand is de pagina die als eerst wordt ingeladen -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
