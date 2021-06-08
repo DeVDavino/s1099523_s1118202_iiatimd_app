@@ -1,9 +1,4 @@
 <resources>
-    <string name="app_name">Ideeen app</string>
-
-    <string name="login_form_title">Inloggen</string>
-    <string name="login_form_username">Username</string>
-    <string name="login_form_password">Password</string>
-    <string name="login_form_login">LOGIN</string>
-
+    <string name="app_name">IATIIMD_Eindoplevering</string>
+    <string name="button">Button</string>
 </resources>
