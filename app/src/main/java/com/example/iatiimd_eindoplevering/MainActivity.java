@@ -2,6 +2,7 @@ package com.example.iatiimd_eindoplevering;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -39,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
         etUsername =(EditText) findViewById(R.id.etUsername);
         etPassword =(EditText) findViewById(R.id.etPassword);
 
+        //Temp om sneller in te loggen
+        etUsername.setText("s1118202@student.hsleiden.nl");
+        etPassword.setText("laravel");
+
+
+
         btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,10 +67,12 @@ public class MainActivity extends AppCompatActivity {
                     if (response.isSuccessful()){
                         try {
                             String token = response.body().string();
-                            tokenResponse tokenResponse = new tokenResponse();
+                            tokenResponse tokenResponse = (tokenResponse) getApplicationContext();
                             tokenResponse.setAccess_token(token);
-                            Toast.makeText(MainActivity.this, tokenResponse.getAccess_token(), Toast.LENGTH_SHORT).show();
-                            Toast.makeText(MainActivity.this, "Token got successfully", Toast.LENGTH_SHORT).show();
+
+                            Intent intent = new Intent(MainActivity.this, IdeeActivity.class);
+                            startActivity(intent);
+
 
                         } catch (IOException e) {
                             e.printStackTrace();
