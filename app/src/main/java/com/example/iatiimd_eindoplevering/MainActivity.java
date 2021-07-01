@@ -2,6 +2,7 @@ package com.example.iatiimd_eindoplevering;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,6 +12,10 @@ import android.widget.Toast;
 import com.example.iatiimd_eindoplevering.RestAPI.ApiClient;
 import com.example.iatiimd_eindoplevering.RestAPI.ApiService;
 import com.example.iatiimd_eindoplevering.RestAPI.tokenResponse;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 
@@ -48,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             final String password = etPassword.getText().toString();
 
             ApiService service = ApiClient.getClient().create(ApiService.class);
-            Call<ResponseBody> srvLogin = service.getToken(email, password, "Pixel 2");
+            Call<ResponseBody> srvLogin = service.getToken(email, password, Build.MODEL);
             srvLogin.enqueue(new Callback<ResponseBody>(){
                 @Override
                 public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -64,6 +69,28 @@ public class MainActivity extends AppCompatActivity {
                             e.printStackTrace();
                             Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                         }
+                    } else {
+                        try {
+                            String error_message = response.errorBody().string();
+                            JSONObject error = new JSONObject(error_message);
+                            JSONObject results = error.getJSONObject("errors");
+
+                            JSONArray email;
+                            if (results.has("email")){ email = results.getJSONArray("email"); }
+                            else { email = null;}
+
+                            JSONArray password;
+                            if (results.has("password")){ password = results.getJSONArray("password"); }
+                            else { password = null; }
+
+                            if (password == null){ Toast.makeText(MainActivity.this, email.getString(0), Toast.LENGTH_SHORT).show(); }
+                            else if (email == null){ Toast.makeText(MainActivity.this, password.getString(0), Toast.LENGTH_SHORT).show(); }
+                            else { Toast.makeText(MainActivity.this, email.getString(0) + " " + password.getString(0), Toast.LENGTH_SHORT).show(); }
+
+                        } catch (JSONException | IOException e) {
+                            e.printStackTrace();
+                            Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
 
@@ -75,7 +102,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e){
             e.printStackTrace();
             Toast.makeText(MainActivity.this, "System error occured, please check your internet connection is enabled", Toast.LENGTH_SHORT).show();
-
         }
     }
 }

@@ -11,7 +11,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-    public static final String BASE_URL = "http://172.28.71.98:80";
+    public static final String BASE_URL = "http://172.28.68.120:80";
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient() {
@@ -26,8 +26,6 @@ public class ApiClient {
 
             // Add Interceptor to HttpClient
             OkHttpClient client = new OkHttpClient.Builder()
-                    .readTimeout(600, TimeUnit.SECONDS)
-                    .connectTimeout(600, TimeUnit.SECONDS)
                     .addInterceptor(interceptor).build();
 
             retrofit = new Retrofit.Builder()
