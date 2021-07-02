@@ -11,7 +11,18 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-    public static final String BASE_URL = "http://172.28.68.120:80";
+    /*
+    HOW TO GET BASE_URL
+    1. open ubuntu
+    2. run the following command: ip a
+    3. get the ip from inet in by 4: eth0, NOT inet6
+    4. go to the folder where the project is (API/backend)
+    5. run the following command: sudo php artisan serve --host THE_IP_FROM_INET --port 80
+    NOTE: the port 80 is there to prevent laravel from trying to start the server 10 times if you're ip is wrong
+
+    And don't forget to change the BASE_URL below ↓↓↓
+     */
+    public static final String BASE_URL = "http://172.18.237.30:80";
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient() {

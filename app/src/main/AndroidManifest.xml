@@ -26,6 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".IdeeActivity" />
+        <activity android:name=".CreateIdeeActivity" />
     </application>
 
 </manifest>

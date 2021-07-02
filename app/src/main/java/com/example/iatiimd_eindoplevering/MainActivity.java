@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                             tokenResponse tokenResponse = (tokenResponse) getApplicationContext();
                             tokenResponse.setAccess_token(token);
 
-                            Intent intent = new Intent(MainActivity.this, IdeeActivity.class);
+                            Intent intent = new Intent(MainActivity.this, CreateIdeeActivity.class);
                             startActivity(intent);
 
 

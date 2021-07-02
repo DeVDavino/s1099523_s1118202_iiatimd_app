@@ -41,7 +41,7 @@ public class IdeeActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.hasFixedSize();
-        
+
         getIdeen();
     }
 
