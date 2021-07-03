@@ -4,14 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.TextView;
 
 import com.example.iatiimd_eindoplevering.RestAPI.ApiClient;
 import com.example.iatiimd_eindoplevering.RestAPI.ApiGetService;
-import com.example.iatiimd_eindoplevering.RestAPI.ideenResponse;
 import com.example.iatiimd_eindoplevering.RestAPI.tokenResponse;
 
 import org.json.JSONArray;
@@ -19,8 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;

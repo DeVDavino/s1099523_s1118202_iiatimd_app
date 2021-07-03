@@ -17,11 +17,6 @@ public class NavigationActivity extends AppCompatActivity {
     //    Initialize variable
     MeowBottomNavigation bottomNavigation;
 
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,16 +66,16 @@ public class NavigationActivity extends AppCompatActivity {
         });
 
         //Set notification count
-        bottomNavigation.setCount(1, "10");
+//        bottomNavigation.setCount(1, "10");
         //Set home fragment initally selected
-        bottomNavigation.show(2, true);
+        bottomNavigation.show(1, true);
 
         bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
                 //Display toast
                 Toast.makeText(getApplicationContext()
-                        ,"You Clicked" + item.getId()
+                        ,"You Clicked " + item.getId()
                         ,Toast.LENGTH_SHORT).show();
             }
         });
@@ -90,7 +85,7 @@ public class NavigationActivity extends AppCompatActivity {
             public void onReselectItem(MeowBottomNavigation.Model item) {
                 //Display toast
                 Toast.makeText(getApplicationContext()
-                        ,"You Reselected" + item.getId()
+                        ,"You Reselected " + item.getId()
                         ,Toast.LENGTH_SHORT).show();
 
             }
