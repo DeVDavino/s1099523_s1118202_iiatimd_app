@@ -52,4 +52,8 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
 
     implementation 'com.etebarian:meow-bottom-navigation-java:1.2.0'
+    def room_version = "2.3.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation 'androidx.multidex:multidex:2.0.1'
 }

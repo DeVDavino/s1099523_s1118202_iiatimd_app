@@ -1,14 +1,40 @@
 package com.example.iatiimd_eindoplevering;
 
-public class Idee {
-    private String title;
-    private String description;
-    private String category;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-    public Idee(String title, String description, String categorie) {
+@Entity
+
+
+
+public class Idee {
+
+    @PrimaryKey
+    private int id;
+
+    @ColumnInfo
+    private String title;
+
+    @ColumnInfo
+    private String description;
+
+    @ColumnInfo
+    private String categorie;
+
+    public Idee(String title, String description, String categorie, int id) {
         this.title = title;
         this.description = description;
-        this.category = categorie;
+        this.categorie = categorie;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -27,11 +53,11 @@ public class Idee {
         this.description = description;
     }
 
-    public String getCategory() {
-        return category;
+    public String getCategorie() {
+        return categorie;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
     }
 }

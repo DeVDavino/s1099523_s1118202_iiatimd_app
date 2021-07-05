@@ -3,7 +3,9 @@ package com.example.iatiimd_eindoplevering;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
+import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,6 +15,8 @@ import com.example.iatiimd_eindoplevering.RestAPI.ApiClient;
 import com.example.iatiimd_eindoplevering.RestAPI.ApiGetService;
 import com.example.iatiimd_eindoplevering.RestAPI.ideenResponse;
 import com.example.iatiimd_eindoplevering.RestAPI.tokenResponse;
+import androidx.multidex.MultiDex;
+import androidx.multidex.MultiDexApplication;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,11 +31,19 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class IdeeActivity extends AppCompatActivity {
+public class IdeeActivity extends AppCompatActivity{
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter recyclerViewAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private AppDatabase db;
+    private Idee[] data;
+
+//    @Override
+//    protected void attachBaseContext(Context base) {
+//        super.attachBaseContext(base);
+//        //MultiDex.install(this); //comment this
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +53,24 @@ public class IdeeActivity extends AppCompatActivity {
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.hasFixedSize();
-
+        db = AppDatabase.getInstance(this.getApplicationContext());
         getIdeen();
+//        new Thread(new InsertIdeeTask(db,ideee[0])).start();
+
+
+//        db.ideeDAO().getAll().get(0).getDescription();
+//        db.ideeDAO().getAll().get(0).getId();
+//        db.ideeDAO().getAll().get(0).getCategorie();
+//        Log.d("testing", "Statement Reached" );
+//        Log.d("dbtest", title);
+//        String idee = AppDatabase.setIdee("Hello world");
+//        Log.d("testing_one", idee);
+
+//        idee = db.ideeDAO().getAll().get(0).getTitle();
+
+//        new Thread(new GetIdeeTask(db)).start();
+
+
     }
 
     private void getIdeen(){
@@ -65,8 +93,10 @@ public class IdeeActivity extends AppCompatActivity {
 
                         for (int i = 0; i < arrSize; i++) {
                             JSONObject idee = answers.getJSONObject(i);
-                            idees[i] = new Idee(idee.getString("titel"),idee.getString("description"),idee.getString("categorie"));
+                            idees[i] = new Idee(idee.getString("titel"),idee.getString("description"),idee.getString("categorie"), idee.getInt("id"));
                         }
+                        tokenResponse.setArrSize(arrSize);
+                        tokenResponse.setIdees(idees);
 
                         recyclerViewAdapter = new IdeeAdapter(idees);
                         recyclerView.setAdapter(recyclerViewAdapter);
@@ -74,6 +104,12 @@ public class IdeeActivity extends AppCompatActivity {
                     } catch (IOException | JSONException e) {
                         e.printStackTrace();
                     }
+
+                }else{
+                    Idee[] idees = tokenResponse.getIdees();
+
+                    recyclerViewAdapter = new IdeeAdapter(idees);
+                    recyclerView.setAdapter(recyclerViewAdapter);
                 }
             }
 

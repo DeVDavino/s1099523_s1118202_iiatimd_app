@@ -41,7 +41,7 @@ public class IdeeAdapter extends RecyclerView.Adapter<IdeeAdapter.IdeeViewHolder
     public void onBindViewHolder(@NonNull IdeeAdapter.IdeeViewHolder holder, int position) {
         holder.Idee_Name.setText(idees[position].getTitle());
         holder.Idee_Desc.setText(idees[position].getDescription());
-        holder.Idee_Cat.setText(idees[position].getCategory());
+        holder.Idee_Cat.setText(idees[position].getCategorie());
     }
 
     @Override
