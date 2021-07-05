@@ -119,8 +119,11 @@ public class HomeFragment extends Fragment {
 
                         for (int i = 0; i < arrSize; i++) {
                             JSONObject idee = answers.getJSONObject(i);
-                            idees[i] = new Idee(idee.getString("titel"),idee.getString("description"),idee.getString("categorie"));
+                            idees[i] = new Idee(idee.getString("titel"),idee.getString("description"),idee.getString("categorie"), idee.getInt("id"));
                         }
+
+                        tokenResponse.setArrSize(arrSize);
+                        tokenResponse.setIdees(idees);
 
                         recyclerViewAdapter = new IdeeAdapter(idees);
                         recyclerView.setAdapter(recyclerViewAdapter);
@@ -133,7 +136,10 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Idee[] idees = tokenResponse.getIdees();
 
+                recyclerViewAdapter = new IdeeAdapter(idees);
+                recyclerView.setAdapter(recyclerViewAdapter);
             }
         });
     }
