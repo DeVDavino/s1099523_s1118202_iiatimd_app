@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">IATIIMD_Eindoplevering</string>
     <string name="button">Inloggen</string>
+    <string name="main_to_regsiter"><u>Nog geen account?</u></string>
+    <string name="regsiter_to_main"><u>Al een account?</u></string>
+
+    <string name="register">Registreren</string>
     <string name="title_activity_navigation">MainActivity</string>
     <string name="title_home">Home</string>
     <string name="title_add">Idee Toevoegen</string>

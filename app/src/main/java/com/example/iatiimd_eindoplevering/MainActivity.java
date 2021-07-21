@@ -29,7 +29,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     EditText etUsername, etPassword;
-    Button btnSignin;
+    Button btnSignin, btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +40,22 @@ public class MainActivity extends AppCompatActivity {
         etUsername =(EditText) findViewById(R.id.etUsername);
         etPassword =(EditText) findViewById(R.id.etPassword);
 
+        btnRegister = (Button) findViewById(R.id.login_to_register);
+
         //Temp om sneller in te loggen
         etUsername.setText("s1118202@student.hsleiden.nl");
         etPassword.setText("laravel");
 
+        //Register
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
 
-
+        //Inloggen
         btnSignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
