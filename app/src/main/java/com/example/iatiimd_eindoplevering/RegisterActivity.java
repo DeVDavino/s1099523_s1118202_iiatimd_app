@@ -60,9 +60,14 @@ public class RegisterActivity extends AppCompatActivity {
             final String wachtwoord = password.getText().toString();
             final String wachtwoord_conf = confirm_password.getText().toString();
 
-            Log.d("TEST", "TEST TEST TEST TEST TEST TEST " + wachtwoord + "    " + wachtwoord_conf);
+            if (naam.equals("")){
+                Toast.makeText(RegisterActivity.this, "Er is nog geen naam ingevuld", Toast.LENGTH_LONG).show();
+            }
+            else if (mail.equals("")){
+                Toast.makeText(RegisterActivity.this, "Er is nog geen email ingevuld", Toast.LENGTH_LONG).show();
+            }
 
-            if (wachtwoord.equals(wachtwoord_conf)){
+            else if (wachtwoord.equals(wachtwoord_conf)){
                 ApiRegister service = ApiClient.getClient().create(ApiRegister.class);
                 Call<ResponseBody> srvRegister = service.register(naam, mail, wachtwoord);
 
@@ -78,9 +83,6 @@ public class RegisterActivity extends AppCompatActivity {
                                 Toast.makeText(RegisterActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
                             }
                         }
-                        else {
-                            Toast.makeText(RegisterActivity.this, "Het wachtwoord is fout", Toast.LENGTH_LONG).show();
-                        }
                     }
 
                     @Override
@@ -89,6 +91,8 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 });
 
+            }else {
+                Toast.makeText(RegisterActivity.this, "De wachtwoorden komen niet overeen", Toast.LENGTH_LONG).show();
             }
         } catch (Exception e){ e.printStackTrace(); }
     }
