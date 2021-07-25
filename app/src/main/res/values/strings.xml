@@ -11,6 +11,9 @@
     <string name="title_profile">Profiel</string>
     <string name="Uitloggen">Uitloggen</string>
 
+    <string name="edit">Idee bewerken</string>
+    <string name="delete">Idee verwijderen</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

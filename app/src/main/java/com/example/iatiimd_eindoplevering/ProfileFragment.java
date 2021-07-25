@@ -9,18 +9,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.iatiimd_eindoplevering.RestAPI.ApiClient;
-import com.example.iatiimd_eindoplevering.RestAPI.ApiGetService;
 import com.example.iatiimd_eindoplevering.RestAPI.ApiGetUser;
 import com.example.iatiimd_eindoplevering.RestAPI.tokenResponse;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 

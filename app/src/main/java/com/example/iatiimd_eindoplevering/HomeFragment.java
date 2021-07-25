@@ -126,7 +126,7 @@ public class HomeFragment extends Fragment {
                         tokenResponse.setArrSize(arrSize);
                         tokenResponse.setIdees(idees);
 
-                        recyclerViewAdapter = new IdeeAdapter(idees);
+                        recyclerViewAdapter = new IdeeAdapter(idees, getContext());
                         recyclerView.setAdapter(recyclerViewAdapter);
 
                     } catch (IOException | JSONException e) {
@@ -139,7 +139,7 @@ public class HomeFragment extends Fragment {
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 Idee[] idees = tokenResponse.getIdees();
 
-                recyclerViewAdapter = new IdeeAdapter(idees);
+                recyclerViewAdapter = new IdeeAdapter(idees, getContext());
                 recyclerView.setAdapter(recyclerViewAdapter);
             }
         });

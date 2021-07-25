@@ -1,10 +1,12 @@
 package com.example.iatiimd_eindoplevering;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -12,11 +14,17 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+
 public class IdeeAdapter extends RecyclerView.Adapter<IdeeAdapter.IdeeViewHolder> {
     private Idee[] idees;
 
-    public IdeeAdapter(Idee[] idees) {
+    private Context context;
+    private Activity activity;
+
+
+    public IdeeAdapter(Idee[] idees, Context context) {
         this.idees = idees;
+        this.context = context;
     }
 
     public static class IdeeViewHolder extends RecyclerView.ViewHolder {
@@ -53,7 +61,14 @@ public class IdeeAdapter extends RecyclerView.Adapter<IdeeAdapter.IdeeViewHolder
         holder.Idee_Edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("TAG_TEST", "onClick: " + holder.Idee_id);
+                Intent intent = new Intent(context, EditIdeeActivity.class);
+
+                intent.putExtra("titel", idees[position].getTitle());
+                intent.putExtra("description", idees[position].getDescription());
+                intent.putExtra("categorie", idees[position].getCategorie());
+                intent.putExtra("id", idees[position].getId());
+
+                context.startActivity(intent);
             }
         });
     }

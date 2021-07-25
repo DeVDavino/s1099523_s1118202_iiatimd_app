@@ -22,7 +22,7 @@ public class ApiClient {
 
     And don't forget to change the BASE_URL below ↓↓↓
      */
-    public static final String BASE_URL = "http://172.29.183.41:80";
+    public static final String BASE_URL = "http://172.29.191.226:80";
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient() {

@@ -92,7 +92,7 @@ public class IdeeActivity extends AppCompatActivity{
                         tokenResponse.setArrSize(arrSize);
                         tokenResponse.setIdees(idees);
 
-                        recyclerViewAdapter = new IdeeAdapter(idees);
+                        recyclerViewAdapter = new IdeeAdapter(idees, getApplicationContext());
                         recyclerView.setAdapter(recyclerViewAdapter);
 
                     } catch (IOException | JSONException e) {
@@ -102,7 +102,7 @@ public class IdeeActivity extends AppCompatActivity{
                 }else{
                     Idee[] idees = tokenResponse.getIdees();
 
-                    recyclerViewAdapter = new IdeeAdapter(idees);
+                    recyclerViewAdapter = new IdeeAdapter(idees, getApplicationContext());
                     recyclerView.setAdapter(recyclerViewAdapter);
                 }
             }

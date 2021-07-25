@@ -34,6 +34,7 @@
             android:name=".NavigationActivity"
             android:label="@string/title_activity_navigation" />
         <activity android:name=".RegisterActivity"/>
+        <activity android:name=".EditIdeeActivity"/>
     </application>
 
 </manifest>
