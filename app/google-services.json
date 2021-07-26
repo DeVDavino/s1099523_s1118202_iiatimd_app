@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "697227588832",
+    "project_id": "iiatimd-eind",
+    "storage_bucket": "iiatimd-eind.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:697227588832:android:1444ebdd0724253a348c85",
+        "android_client_info": {
+          "package_name": "com.example.iatiimd_eindoplevering"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "697227588832-l2ttu10mp09hnl5a2p3du2lqm7tp7cv6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWdG9t7jMaJG0XxWQlPt-jGYB-8Cp48w0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "697227588832-l2ttu10mp09hnl5a2p3du2lqm7tp7cv6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
