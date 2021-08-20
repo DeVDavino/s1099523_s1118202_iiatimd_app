@@ -4,9 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IdeeFragment">
+    tools:context=".IdeeFragment"
+    android:background="#EEEEEE"
+    >
+
+
 
     <EditText
+        android:fontFamily="monospace"
         android:id="@+id/titel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,6 +28,8 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
+
+        android:fontFamily="monospace"
         android:id="@+id/description"
         android:layout_width="352dp"
         android:layout_height="100dp"
@@ -40,6 +47,7 @@
         tools:ignore="MissingConstraints" />
 
     <Spinner
+        android:fontFamily="monospace"
         android:id="@+id/categorie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -53,6 +61,8 @@
         tools:ignore="MissingConstraints" />
 
     <Button
+        android:fontFamily="monospace"
+        app:backgroundTint="#FFD369"
         android:id="@+id/create"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

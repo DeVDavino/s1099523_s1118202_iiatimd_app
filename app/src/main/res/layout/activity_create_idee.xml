@@ -4,10 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#EEEEEE"
+    >
+
 
 
     <EditText
+        android:fontFamily="monospace"
         android:id="@+id/titel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,6 +25,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
+        android:fontFamily="monospace"
         android:id="@+id/description"
         android:layout_width="352dp"
         android:layout_height="132dp"
@@ -38,6 +43,7 @@
         />
 
     <Spinner
+        android:fontFamily="monospace"
         android:id="@+id/categorie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,10 +56,12 @@
         tools:ignore="MissingConstraints" />
 
     <Button
+        android:fontFamily="monospace"
         android:id="@+id/create"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/create"
+        app:backgroundTint="#FFD369"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

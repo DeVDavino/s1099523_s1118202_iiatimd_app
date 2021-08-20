@@ -9,13 +9,20 @@
     android:layout_marginTop="20dp"
     android:layout_marginEnd="5dp"
     android:layout_marginRight="5dp"
-    android:layout_marginBottom="20dp">
+    android:layout_marginBottom="20dp"
+    android:background="#EEEEEE"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:background="#a869ff"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <TextView
+            android:textColor="@color/white"
+            android:fontFamily="monospace"
             android:id="@+id/Idee_Name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,6 +35,8 @@
             app:layout_constraintVertical_bias="0.197" />
 
         <TextView
+            android:textColor="@color/white"
+            android:fontFamily="monospace"
             android:id="@+id/idee_Desc"
             android:layout_width="269dp"
             android:layout_height="40dp"
@@ -40,6 +49,9 @@
             app:layout_constraintVertical_bias="0.733" />
 
         <TextView
+            android:textColor="@color/white"
+            android:background=""
+            android:fontFamily="monospace"
             android:id="@+id/idee_Cat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -51,7 +63,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.197" />
 
+
         <ImageButton
+            app:backgroundTint="#FFD369"
             android:id="@+id/idee_Edit"
             android:layout_width="40dp"
             android:layout_height="40dp"

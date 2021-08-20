@@ -4,10 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="#EEEEEE"
+    >
 
 
     <EditText
+        android:fontFamily="monospace"
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,6 +23,7 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
+        android:fontFamily="monospace"
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,6 +37,8 @@
         tools:ignore="MissingConstraints" />
 
     <Button
+        app:backgroundTint="#FFD369"
+        android:fontFamily="monospace"
         android:id="@+id/etSignin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,6 +49,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:fontFamily="monospace"
         android:id="@+id/login_to_register"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
