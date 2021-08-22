@@ -10,6 +10,13 @@
 
 
     <EditText
+        android:drawableStart="@drawable/custom_email_icon"
+        android:textSize="14dp"
+        android:padding="12dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:background="@drawable/custom_input"
+        android:drawablePadding="12dp"
         android:fontFamily="monospace"
         android:id="@+id/etUsername"
         android:layout_width="match_parent"
@@ -20,9 +27,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:drawableLeft="@drawable/custom_email_icon"/>
 
     <EditText
+        android:drawableStart="@drawable/custom_lock_icon"
+        android:textSize="14dp"
+        android:padding="12dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:background="@drawable/custom_input"
+        android:drawablePadding="12dp"
         android:fontFamily="monospace"
         android:id="@+id/etPassword"
         android:layout_width="match_parent"
@@ -34,7 +49,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etUsername"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:drawableLeft="@drawable/custom_lock_icon"
+        android:paddingLeft="12dp" />
 
     <Button
         app:backgroundTint="#FFD369"

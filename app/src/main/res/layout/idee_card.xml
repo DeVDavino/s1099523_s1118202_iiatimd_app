@@ -50,7 +50,6 @@
 
         <TextView
             android:textColor="@color/white"
-            android:background=""
             android:fontFamily="monospace"
             android:id="@+id/idee_Cat"
             android:layout_width="wrap_content"

@@ -9,6 +9,12 @@
     android:layout_height="match_parent">
 
     <EditText
+        android:textSize="14dp"
+        android:padding="12dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:background="@drawable/custom_input"
+        android:drawablePadding="12dp"
         android:textColor="#222831"
         android:id="@+id/register_username"
         android:layout_width="match_parent"
@@ -27,6 +33,12 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
+        android:textSize="14dp"
+        android:padding="12dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:background="@drawable/custom_input"
+        android:drawablePadding="12dp"
         android:textColor="#222831"
         android:id="@+id/register_email"
         android:layout_width="match_parent"
@@ -42,6 +54,12 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
+        android:textSize="14dp"
+        android:padding="12dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:background="@drawable/custom_input"
+        android:drawablePadding="12dp"
         android:textColor="#222831"
         android:id="@+id/register_password"
         android:layout_width="match_parent"
@@ -58,6 +76,12 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
+        android:textSize="14dp"
+        android:padding="12dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:background="@drawable/custom_input"
+        android:drawablePadding="12dp"
         android:textColor="#222831"
         android:id="@+id/register_confirm"
         android:layout_width="match_parent"
