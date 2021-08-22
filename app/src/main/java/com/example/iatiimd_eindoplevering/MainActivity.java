@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
         btnRegister = (Button) findViewById(R.id.login_to_register);
 
         //Temp om sneller in te loggen
-//        etUsername.setText("s1118202@student.hsleiden.nl");
-//        etPassword.setText("laravel");
+        etUsername.setText("s1118202@student.hsleiden.nl");
+        etPassword.setText("laravel");
 
         //Register
         btnRegister.setOnClickListener(new View.OnClickListener() {

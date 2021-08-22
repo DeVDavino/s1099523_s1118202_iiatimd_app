@@ -55,6 +55,10 @@
         />
 
     <Spinner
+        android:background="@drawable/spinner_output"
+        android:padding="10dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:fontFamily="monospace"
         android:id="@+id/categorie"
         android:layout_width="match_parent"

@@ -74,9 +74,9 @@ public class NavigationActivity extends AppCompatActivity {
             @Override
             public void onClickItem(MeowBottomNavigation.Model item) {
                 //Display toast
-                Toast.makeText(getApplicationContext()
-                        ,"You Clicked " + item.getId()
-                        ,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext()
+//                        ,"You Clicked " + item.getId()
+//                        ,Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -84,9 +84,9 @@ public class NavigationActivity extends AppCompatActivity {
             @Override
             public void onReselectItem(MeowBottomNavigation.Model item) {
                 //Display toast
-                Toast.makeText(getApplicationContext()
-                        ,"You Reselected " + item.getId()
-                        ,Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext()
+//                        ,"You Reselected " + item.getId()
+//                        ,Toast.LENGTH_SHORT).show();
 
             }
         });
